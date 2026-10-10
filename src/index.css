@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,63 +7,68 @@
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply bg-neutral-100 text-neutral-800 font-sans antialiased;
+    @apply bg-neutral-50 text-neutral-800 font-sans antialiased;
   }
   h1, h2, h3, h4 {
-    @apply font-serif;
-    letter-spacing: -0.02em;
+    @apply font-serif text-neutral-900;
+    font-variation-settings: 'SOFT' 100;
+    letter-spacing: -0.01em;
+  }
+  .font-serif,
+  .font-display {
+    font-variation-settings: 'SOFT' 100;
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 select-none cursor-pointer;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 select-none cursor-pointer;
   }
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:scale-95 shadow-sm hover:shadow-md;
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:scale-95 shadow-soft;
   }
   .btn-secondary {
-    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 active:scale-95 shadow-sm;
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 active:scale-95 shadow-soft;
   }
   .btn-accent {
-    @apply btn bg-accent-500 text-white hover:bg-accent-600 active:scale-95 shadow-sm;
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 active:scale-95 shadow-soft;
   }
   .btn-outline {
-    @apply btn bg-transparent border border-neutral-300 text-neutral-700 hover:bg-neutral-100 hover:border-neutral-400 active:scale-95;
+    @apply btn bg-white border border-neutral-200 text-neutral-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-700 active:scale-95;
   }
   .btn-ghost {
-    @apply btn bg-transparent text-neutral-600 hover:bg-neutral-200 active:scale-95;
+    @apply btn bg-transparent text-neutral-600 hover:bg-primary-50 hover:text-primary-700 active:scale-95;
   }
   .btn-danger {
-    @apply btn bg-error-500 text-white hover:bg-error-600 active:scale-95 shadow-sm;
+    @apply btn bg-error-500 text-white hover:bg-error-600 active:scale-95 shadow-soft;
   }
   .btn:disabled {
     @apply opacity-40 cursor-not-allowed pointer-events-none;
   }
   .card {
-    @apply bg-white rounded-xl border border-neutral-200 shadow-sm;
+    @apply bg-white rounded-3xl border border-neutral-200 shadow-soft;
   }
   .card-hover {
-    @apply card hover:shadow-md hover:border-neutral-300 transition-all duration-200 cursor-pointer;
+    @apply card hover:shadow-lift hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
   }
   .stat-pill {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium;
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold;
   }
   .metric-bar {
-    @apply w-full h-2 rounded-full bg-neutral-200 overflow-hidden;
+    @apply w-full h-2 rounded-full bg-neutral-100 overflow-hidden;
   }
   .metric-bar-fill {
     @apply h-full rounded-full transition-all duration-500;
   }
   .panel-title {
-    @apply text-xs font-semibold uppercase tracking-wider text-neutral-500;
+    @apply text-xs font-bold uppercase tracking-wider text-neutral-500;
   }
   .input-field {
-    @apply w-full px-4 py-2.5 rounded-lg border border-neutral-300 bg-white text-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all;
+    @apply w-full px-4 py-2.5 rounded-xl border border-neutral-200 bg-white text-neutral-800 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-400 transition-all;
   }
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #c9c1b5 transparent;
+    scrollbar-color: #CDCFDE transparent;
   }
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
@@ -82,7 +85,7 @@
 /* Campus map grid pattern */
 .campus-grid {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(31, 40, 80, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 40, 80, 0.035) 1px, transparent 1px);
   background-size: 24px 24px;
 }

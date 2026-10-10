@@ -86,9 +86,9 @@ export function Modal({
 }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 animate-fade-in" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-900/30 animate-fade-in" onClick={onClose}>
       <div
-        className={`${maxWidth} w-full bg-white rounded-2xl shadow-2xl border border-neutral-200 max-h-[90vh] overflow-y-auto scrollbar-thin animate-scale-in`}
+        className={`${maxWidth} w-full bg-white rounded-3xl shadow-lift border border-neutral-200 max-h-[90vh] overflow-y-auto scrollbar-thin animate-scale-in`}
         onClick={(e) => e.stopPropagation()}
       >
         {children}

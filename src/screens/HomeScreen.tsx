@@ -18,22 +18,22 @@ export function HomeScreen() {
   const { setScreen, hasSavedGame, continueGame } = useGame();
 
   return (
-    <div className="min-h-screen bg-[#f4f6f8] text-[#172033]">
+    <div className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* Top Navigation */}
-      <header className="border-b border-[#e3e7ec] bg-white">
+      <header className="border-b border-neutral-200 bg-white/80">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e5eff] text-white shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-600 text-white">
               <GraduationCap size={22} strokeWidth={2.2} />
             </div>
 
             <div>
-              <div className="text-[15px] font-bold tracking-tight text-[#172033]">
+              <div className="font-serif text-lg font-semibold leading-none text-neutral-900">
                 Campus Tycoon
               </div>
 
-              <div className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#8992a3]">
+              <div className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-neutral-500">
                 University Simulator
               </div>
             </div>
@@ -43,14 +43,14 @@ export function HomeScreen() {
           <div className="hidden items-center gap-1 sm:flex">
             <button
               onClick={() => setScreen('how-to-play')}
-              className="rounded-lg px-3 py-2 text-xs font-medium text-[#697386] transition hover:bg-[#f3f5f8] hover:text-[#172033]"
+              className="rounded-full px-3.5 py-2 text-xs font-semibold text-neutral-600 transition hover:bg-primary-50 hover:text-primary-700"
             >
               How to Play
             </button>
 
             <button
               onClick={() => setScreen('leaderboard')}
-              className="rounded-lg px-3 py-2 text-xs font-medium text-[#697386] transition hover:bg-[#f3f5f8] hover:text-[#172033]"
+              className="rounded-full px-3.5 py-2 text-xs font-semibold text-neutral-600 transition hover:bg-primary-50 hover:text-primary-700"
             >
               Leaderboard
             </button>
@@ -60,32 +60,25 @@ export function HomeScreen() {
 
       <main className="mx-auto max-w-7xl px-5 pb-10 pt-8 sm:px-8 lg:pt-10">
         {/* Hero */}
-        <section className="relative overflow-hidden rounded-[28px] bg-[#172033] shadow-[0_20px_60px_rgba(23,32,51,0.12)]">
-          {/* Decorative campus lines */}
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute -right-20 -top-28 h-80 w-80 rounded-full border-[50px] border-white/[0.025]" />
-            <div className="absolute -right-5 -top-14 h-64 w-64 rounded-full border border-white/[0.05]" />
-            <div className="absolute bottom-[-100px] left-[40%] h-72 w-72 rounded-full border border-white/[0.035]" />
-          </div>
+        <section className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-soft">
 
           <div className="relative grid min-h-[430px] lg:grid-cols-[1fr_0.95fr]">
             {/* Hero copy */}
             <div className="flex flex-col justify-center px-7 py-10 sm:px-10 lg:px-14">
               <div className="mb-5 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-300">
+                <span className="rounded-full bg-secondary-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-secondary-700">
                   Build • Manage • Grow
                 </span>
               </div>
 
-              <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl lg:text-[54px]">
+              <h1 className="max-w-xl font-serif text-4xl font-semibold leading-[1.05] text-neutral-900 sm:text-5xl lg:text-[54px]">
                 Your university.
-                <span className="block text-[#8fb3ff]">
+                <span className="block italic text-primary-600">
                   Your decisions.
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-lg text-sm leading-6 text-[#aab4c5] sm:text-[15px]">
+              <p className="mt-5 max-w-lg text-sm leading-6 text-neutral-600 sm:text-[15px]">
                 Start with an empty campus and turn it into a thriving
                 university. Build facilities, manage your budget, and keep
                 your students happy.
@@ -94,9 +87,9 @@ export function HomeScreen() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <button
                   onClick={() => setScreen('new-game')}
-                  className="group flex items-center justify-center gap-3 rounded-xl bg-[#2f6bff] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-950/20 transition-all hover:bg-[#3b74ff] hover:shadow-xl"
+                  className="group flex items-center justify-center gap-3 rounded-full bg-primary-600 px-6 py-3.5 text-sm font-bold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-lift"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/15">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
                     <Play size={14} fill="currentColor" />
                   </span>
 
@@ -111,20 +104,20 @@ export function HomeScreen() {
                 <button
                   onClick={() => hasSavedGame && continueGame()}
                   disabled={!hasSavedGame}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/[0.1] disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-6 py-3.5 text-sm font-bold text-neutral-700 transition hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <BookOpen size={16} />
                   Continue
                 </button>
               </div>
 
-              <div className="mt-8 flex items-center gap-5 text-[11px] text-[#7f8ba0]">
+              <div className="mt-8 flex items-center gap-5 text-xs text-neutral-500">
                 <span className="flex items-center gap-1.5">
                   <Building2 size={13} />
                   Build your campus
                 </span>
 
-                <span className="hidden h-3 w-px bg-white/10 sm:block" />
+                <span className="hidden h-3 w-px bg-neutral-200 sm:block" />
 
                 <span className="flex items-center gap-1.5">
                   <Users size={13} />
@@ -136,55 +129,55 @@ export function HomeScreen() {
             {/* Campus illustration */}
             <div className="relative hidden min-h-[430px] lg:block">
               {/* Ground */}
-              <div className="absolute bottom-0 right-0 h-[62%] w-[92%] rounded-tl-[100px] bg-[#1d2940]" />
+              <div className="absolute bottom-0 right-0 h-[62%] w-[92%] rounded-tl-[100px] bg-primary-50" />
 
               {/* Lawn */}
-              <div className="absolute bottom-0 right-0 h-[46%] w-[80%] bg-[#233b35]" />
+              <div className="absolute bottom-0 right-0 h-[46%] w-[80%] rounded-tl-[60px] bg-accent-100" />
 
               {/* Main road */}
-              <div className="absolute bottom-[-10px] right-[24%] h-[310px] w-[80px] rotate-[28deg] bg-[#263348]" />
+              <div className="absolute bottom-[-10px] right-[24%] h-[310px] w-[80px] rotate-[28deg] bg-neutral-100" />
 
-              <div className="absolute bottom-0 right-[32%] h-[310px] w-[2px] rotate-[28deg] border-l border-dashed border-white/10" />
+              <div className="absolute bottom-0 right-[32%] h-[310px] w-[2px] rotate-[28deg] border-l border-dashed border-neutral-300" />
 
               {/* Main building */}
               <div className="absolute bottom-[29%] right-[27%]">
-                <div className="relative h-[145px] w-[190px] rounded-t-lg border border-white/10 bg-[#697b96] shadow-2xl">
+                <div className="relative h-[145px] w-[190px] rounded-t-2xl border border-neutral-200 bg-white shadow-soft">
                   {/* Windows */}
                   <div className="grid grid-cols-4 gap-3 px-5 pt-8">
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
                       <div
                         key={item}
-                        className="h-8 rounded-sm bg-[#9bb6df]/50"
+                        className="h-8 rounded-md bg-primary-100"
                       />
                     ))}
                   </div>
 
                   {/* Entrance */}
-                  <div className="absolute bottom-0 left-1/2 h-16 w-12 -translate-x-1/2 rounded-t-lg bg-[#263348]" />
+                  <div className="absolute bottom-0 left-1/2 h-16 w-12 -translate-x-1/2 rounded-t-2xl bg-secondary-200" />
                 </div>
 
                 {/* Roof */}
-                <div className="absolute -left-3 -top-5 h-6 w-[206px] skew-x-[-18deg] rounded-sm bg-[#34435b]" />
+                <div className="absolute -left-3 -top-5 h-6 w-[206px] skew-x-[-18deg] rounded-md bg-secondary-300" />
 
                 {/* Flag */}
-                <div className="absolute -top-16 left-1/2 h-16 w-px bg-[#77859b]" />
-                <div className="absolute -top-16 left-1/2 h-5 w-8 bg-[#3c74ff]" />
+                <div className="absolute -top-16 left-1/2 h-16 w-px bg-neutral-400" />
+                <div className="absolute -top-16 left-1/2 h-5 w-8 rounded-r bg-primary-500" />
               </div>
 
               {/* Smaller building */}
               <div className="absolute bottom-[22%] right-[5%]">
-                <div className="h-[82px] w-[105px] rounded-t bg-[#53647c]">
+                <div className="h-[82px] w-[105px] rounded-t-xl border border-neutral-200 bg-white">
                   <div className="grid grid-cols-3 gap-2 px-3 pt-5">
                     {[1, 2, 3, 4, 5, 6].map((item) => (
                       <div
                         key={item}
-                        className="h-4 rounded-sm bg-[#a8bfdf]/40"
+                        className="h-4 rounded bg-violet-100"
                       />
                     ))}
                   </div>
                 </div>
 
-                <div className="absolute -top-3 -left-1 h-4 w-[107px] bg-[#34435b]" />
+                <div className="absolute -top-3 -left-1 h-4 w-[107px] rounded-md bg-violet-300" />
               </div>
 
               {/* Trees */}
@@ -195,30 +188,30 @@ export function HomeScreen() {
                 'bottom-[8%] right-[10%]',
               ].map((position, index) => (
                 <div key={index} className={`absolute ${position}`}>
-                  <div className="mx-auto h-5 w-1 bg-[#4b5b4d]" />
-                  <div className="h-10 w-10 rounded-full bg-[#36584b] shadow-lg" />
+                  <div className="mx-auto h-5 w-1 bg-amber-600/50" />
+                  <div className="h-10 w-10 rounded-full bg-accent-400" />
                 </div>
               ))}
 
               {/* Campus status card */}
-              <div className="absolute right-7 top-7 w-48 rounded-xl border border-white/10 bg-[#101827]/90 p-4 shadow-xl backdrop-blur-sm">
+              <div className="absolute right-7 top-7 w-48 rounded-3xl border border-neutral-200 bg-white p-4 shadow-soft">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#77849a]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-neutral-500">
                     New Campus
                   </span>
 
-                  <span className="h-2 w-2 rounded-full bg-amber-400" />
+                  <span className="h-2 w-2 rounded-full bg-secondary-500" />
                 </div>
 
-                <div className="mb-3 text-sm font-semibold text-white">
+                <div className="mb-3 font-serif text-base font-semibold text-neutral-900">
                   Ready to build
                 </div>
 
-                <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full w-[8%] rounded-full bg-blue-500" />
+                <div className="h-1.5 overflow-hidden rounded-full bg-neutral-100">
+                  <div className="h-full w-[8%] rounded-full bg-primary-500" />
                 </div>
 
-                <div className="mt-2 flex justify-between text-[9px] text-[#66738a]">
+                <div className="mt-2 flex justify-between text-[10px] text-neutral-500">
                   <span>Campus progress</span>
                   <span>0%</span>
                 </div>
@@ -262,10 +255,10 @@ export function HomeScreen() {
         <section className="mt-8">
           <div className="mb-3 flex items-end justify-between">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#9aa3b2]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-500">
                 Explore
               </p>
-              <h2 className="mt-1 text-lg font-bold text-[#172033]">
+              <h2 className="mt-1 font-serif text-xl font-semibold text-neutral-900">
                 Campus Menu
               </h2>
             </div>
@@ -307,9 +300,19 @@ export function HomeScreen() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-[#e1e5ea] pt-5 text-xs text-[#9aa3b2] sm:flex-row">
+        <footer className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-neutral-200 pt-5 text-xs text-neutral-500 sm:flex-row">
           <span>Campus Tycoon © 2026</span>
-          <span>Computer Science Portfolio Project · Aranya Vij</span>
+          <span>
+            Computer Science Portfolio Project · Made by{" "}
+            <a
+              href="https://aranyavij.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary-600 transition-colors hover:text-secondary-500"
+            >
+              Aranya Vij
+            </a>
+          </span>
         </footer>
       </main>
     </div>
@@ -328,26 +331,26 @@ function StatCard({
   color: 'blue' | 'violet' | 'amber' | 'emerald';
 }) {
   const colors = {
-    blue: 'bg-blue-50 text-blue-600',
-    violet: 'bg-violet-50 text-violet-600',
-    amber: 'bg-amber-50 text-amber-600',
-    emerald: 'bg-emerald-50 text-emerald-600',
+    blue: 'bg-primary-50 text-primary-600',
+    violet: 'bg-violet-50 text-violet-500',
+    amber: 'bg-secondary-100 text-secondary-600',
+    emerald: 'bg-emerald-50 text-emerald-500',
   };
 
   return (
-    <div className="rounded-xl border border-[#e2e6eb] bg-white p-4 shadow-[0_2px_8px_rgba(23,32,51,0.03)]">
+    <div className="rounded-3xl border border-neutral-200 bg-white p-4 shadow-soft">
       <div className="flex items-center gap-3">
         <div
-          className={`flex h-9 w-9 items-center justify-center rounded-lg ${colors[color]}`}
+          className={`flex h-9 w-9 items-center justify-center rounded-2xl ${colors[color]}`}
         >
           {icon}
         </div>
 
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-[#9aa3b2]">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-500">
             {label}
           </p>
-          <p className="mt-0.5 text-lg font-bold text-[#172033]">{value}</p>
+          <p className="mt-0.5 font-serif text-xl font-semibold text-neutral-900">{value}</p>
         </div>
       </div>
     </div>
@@ -368,31 +371,31 @@ function MenuCard({
   accent: 'blue' | 'amber' | 'violet' | 'slate';
 }) {
   const colors = {
-    blue: 'bg-blue-50 text-blue-600',
+    blue: 'bg-primary-50 text-primary-600',
     amber: 'bg-amber-50 text-amber-600',
-    violet: 'bg-violet-50 text-violet-600',
-    slate: 'bg-slate-100 text-slate-600',
+    violet: 'bg-violet-50 text-violet-500',
+    slate: 'bg-secondary-50 text-secondary-600',
   };
 
   return (
     <button
       onClick={onClick}
-      className="group flex items-center gap-4 rounded-xl border border-[#e2e6eb] bg-white p-4 text-left shadow-[0_2px_8px_rgba(23,32,51,0.03)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#d4d9e0] hover:shadow-md"
+      className="group flex items-center gap-4 rounded-3xl border border-neutral-200 bg-white p-4 text-left shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-lift"
     >
       <div
-        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${colors[accent]}`}
+        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ${colors[accent]}`}
       >
         {icon}
       </div>
 
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold text-[#172033]">{title}</p>
-        <p className="mt-0.5 text-xs text-[#929baa]">{description}</p>
+        <p className="text-sm font-bold text-neutral-900">{title}</p>
+        <p className="mt-0.5 text-xs text-neutral-500">{description}</p>
       </div>
 
       <ArrowRight
         size={16}
-        className="text-[#c5cad2] transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#667085]"
+        className="text-neutral-300 transition-all duration-200 group-hover:translate-x-1 group-hover:text-primary-600"
       />
     </button>
   );

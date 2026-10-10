@@ -24,7 +24,7 @@ export function AnalyticsScreen() {
   }];
 
   return (
-    <div className="min-h-screen bg-neutral-100 p-4 lg:p-6">
+    <div className="min-h-screen bg-neutral-50 p-4 lg:p-6">
       <div className="max-w-5xl mx-auto">
         <button onClick={() => setScreen('game')} className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-800 mb-4 transition-colors">
           <ArrowLeft size={18} /> Back to Game
@@ -42,7 +42,7 @@ export function AnalyticsScreen() {
             <StatCard icon={<TrendingDown size={16} />} label="Monthly Expenses" value={formatMoney(state.monthlyExpenses)} color="error" />
             <StatCard icon={<Wallet size={16} />} label="Net Cash Flow" value={`${state.monthlyIncome - state.monthlyExpenses >= 0 ? '+' : ''}${formatMoney(state.monthlyIncome - state.monthlyExpenses)}`} color={state.monthlyIncome - state.monthlyExpenses >= 0 ? 'success' : 'error'} />
           </div>
-          <Chart history={history} metric="budget" label="Budget Over Time" color="#3366ff" formatFn={formatMoney} />
+          <Chart history={history} metric="budget" label="Budget Over Time" color="#4F8CF7" formatFn={formatMoney} />
         </div>
 
         {/* Students */}
@@ -54,7 +54,7 @@ export function AnalyticsScreen() {
             <StatCard icon={<Users size={16} />} label="Capacity" value={state.studentCapacity.toString()} color="neutral" />
             <StatCard icon={<Users size={16} />} label="Utilization" value={`${Math.round((state.students / state.studentCapacity) * 100)}%`} color="secondary" />
           </div>
-          <Chart history={history} metric="students" label="Enrollment Over Time" color="#1bb565" />
+          <Chart history={history} metric="students" label="Enrollment Over Time" color="#5DBB98" />
         </div>
 
         {/* Academics */}
@@ -67,8 +67,8 @@ export function AnalyticsScreen() {
             <StatCard icon={<Leaf size={16} />} label="Sustainability" value={`${state.sustainability}/100`} color="accent" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Chart history={history} metric="reputation" label="Reputation" color="#e89423" />
-            <Chart history={history} metric="academicQuality" label="Academic Quality" color="#3366ff" />
+            <Chart history={history} metric="reputation" label="Reputation" color="#F2709F" />
+            <Chart history={history} metric="academicQuality" label="Academic Quality" color="#9C88F0" />
           </div>
         </div>
 
@@ -82,7 +82,7 @@ export function AnalyticsScreen() {
             <StatCard icon={<Leaf size={16} />} label="Sustainability" value={`${state.sustainability}/100`} color="accent" />
           </div>
           <div className="mt-4">
-            <Chart history={history} metric="sustainability" label="Sustainability Over Time" color="#1bb565" />
+            <Chart history={history} metric="sustainability" label="Sustainability Over Time" color="#5DBB98" />
           </div>
         </div>
       </div>
@@ -101,8 +101,8 @@ function StatCard({ icon, label, value, color }: { icon: React.ReactNode; label:
     success: 'bg-success-50 text-success-700',
   };
   return (
-    <div className="bg-neutral-50 rounded-lg p-3 border border-neutral-200">
-      <div className={`inline-flex items-center justify-center w-7 h-7 rounded-md ${colorMap[color]} mb-1.5`}>
+    <div className="bg-neutral-50 rounded-2xl p-3 border border-neutral-200">
+      <div className={`inline-flex items-center justify-center w-7 h-7 rounded-xl ${colorMap[color]} mb-1.5`}>
         {icon}
       </div>
       <p className="text-xs text-neutral-500">{label}</p>

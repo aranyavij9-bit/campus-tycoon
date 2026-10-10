@@ -26,15 +26,15 @@ export function ManagementPanel() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex border-b border-neutral-200">
+      <div className="flex gap-1 p-2 border-b border-neutral-200">
         {tabs.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
-            className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+            className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold rounded-full transition-colors ${
               tab === t.key
-                ? 'border-primary-500 text-primary-700 bg-primary-50/50'
-                : 'border-transparent text-neutral-500 hover:text-neutral-800 hover:bg-neutral-50'
+                ? 'bg-primary-50 text-primary-700'
+                : 'text-neutral-500 hover:text-neutral-800 hover:bg-neutral-50'
             }`}
           >
             {t.icon}
@@ -82,9 +82,9 @@ function StaffTab({ state }: { state: GameState }) {
           const hireCost = opt.salary * 2;
           const canAfford = state.budget >= hireCost;
           return (
-            <div key={opt.type} className="flex items-center justify-between p-3 rounded-lg bg-neutral-50 border border-neutral-200">
+            <div key={opt.type} className="flex items-center justify-between p-3 rounded-2xl bg-neutral-50 border border-neutral-200">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-neutral-600">
+                <div className="w-9 h-9 rounded-3xl bg-primary-50 text-primary-600 flex items-center justify-center">
                   {opt.icon}
                 </div>
                 <div>
@@ -132,7 +132,7 @@ function FinanceTab({ state }: { state: GameState }) {
         <FinanceBox label="Projected Yearly" value={`${projectedYearly >= 0 ? '+' : ''}${formatMoney(projectedYearly)}`} color={projectedYearly >= 0 ? 'text-success-600' : 'text-error-600'} />
       </div>
 
-      <div className="bg-neutral-50 rounded-lg p-3 border border-neutral-200">
+      <div className="bg-neutral-50 rounded-2xl p-3 border border-neutral-200">
         <p className="text-xs font-semibold text-neutral-600 mb-2">Income Breakdown</p>
         <div className="space-y-1 text-xs">
           <div className="flex justify-between"><span className="text-neutral-500">Tuition</span><span className="font-medium">{formatMoney(tuitionRevenue)}/mo</span></div>
@@ -160,7 +160,7 @@ function FinanceTab({ state }: { state: GameState }) {
             <button
               key={p}
               onClick={() => { setTuitionState(p); setTuition(p); }}
-              className={`text-xs px-2.5 py-1 rounded-md transition-colors ${
+              className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
                 tuition === p ? 'bg-primary-600 text-white' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
               }`}
             >
@@ -187,7 +187,7 @@ function FinanceTab({ state }: { state: GameState }) {
 
 function FinanceBox({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div className="bg-neutral-50 rounded-lg p-2.5 border border-neutral-200">
+    <div className="bg-neutral-50 rounded-2xl p-2.5 border border-neutral-200">
       <p className="text-xs text-neutral-500">{label}</p>
       <p className={`text-sm font-bold ${color}`}>{value}</p>
     </div>
@@ -212,7 +212,7 @@ function ResearchTab({ state }: { state: GameState }) {
           const nextCost = area.level < maxLevel ? RESEARCH_COSTS[area.level] : null;
           const canAfford = nextCost !== null && state.budget >= nextCost;
           return (
-            <div key={area.id} className="p-3 rounded-lg bg-neutral-50 border border-neutral-200">
+            <div key={area.id} className="p-3 rounded-2xl bg-neutral-50 border border-neutral-200">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-sm font-medium text-neutral-800">{area.name}</p>
                 <div className="flex gap-0.5">
@@ -270,15 +270,15 @@ function SustainabilityTab({ state }: { state: GameState }) {
           return (
             <div
               key={upgrade.id}
-              className={`p-3 rounded-lg border transition-all ${
+              className={`p-3 rounded-2xl border transition-all ${
                 upgrade.purchased
                   ? 'bg-accent-50 border-accent-200'
                   : 'bg-neutral-50 border-neutral-200'
               }`}
             >
               <div className="flex items-start gap-3">
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                  upgrade.purchased ? 'bg-accent-500 text-white' : 'bg-white border border-neutral-200 text-neutral-600'
+                <div className={`w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 ${
+                  upgrade.purchased ? 'bg-accent-500 text-white' : 'bg-accent-50 text-accent-600'
                 }`}>
                   <Icon size={18} />
                 </div>
@@ -384,7 +384,7 @@ export function GoalProgressPanel({ state }: { state: GameState }) {
   return (
     <div className="card p-4">
       <div className="flex items-center gap-2 mb-2">
-        <div className="w-8 h-8 rounded-lg bg-secondary-100 text-secondary-700 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-2xl bg-secondary-100 text-secondary-700 flex items-center justify-center">
           <Icon size={16} />
         </div>
         <div>

@@ -24,7 +24,7 @@ export function CampusMap({
   const zones: ZoneType[] = ['academic', 'student-life', 'administration', 'infrastructure'];
 
   return (
-    <div className="campus-grid bg-neutral-50 rounded-xl border border-neutral-200 p-4 lg:p-6 overflow-y-auto scrollbar-thin" style={{ minHeight: '400px' }}>
+    <div className="campus-grid bg-neutral-50 rounded-3xl border border-neutral-200 p-4 lg:p-6 overflow-y-auto scrollbar-thin" style={{ minHeight: '400px' }}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {zones.map((zone) => {
           const info = ZONE_INFO[zone];
@@ -34,12 +34,12 @@ export function CampusMap({
           });
 
           return (
-            <div key={zone} className={`${info.bgColor} rounded-xl border ${info.borderColor} p-4`}>
+            <div key={zone} className={`${info.bgColor} rounded-3xl border ${info.borderColor} p-4`}>
               <div className="flex items-center justify-between mb-3">
                 <h3 className={`text-sm font-bold ${info.color} uppercase tracking-wider`}>{info.name}</h3>
                 <button
                   onClick={() => onBuildClick(zone)}
-                  className="flex items-center gap-1 text-xs font-medium text-neutral-500 hover:text-neutral-800 bg-white/60 hover:bg-white rounded-md px-2 py-1 transition-colors"
+                  className="flex items-center gap-1 text-xs font-medium text-neutral-500 hover:text-neutral-800 bg-white/60 hover:bg-white rounded-full px-2.5 py-1 transition-colors"
                 >
                   <Plus size={14} /> Build
                 </button>
@@ -58,7 +58,7 @@ export function CampusMap({
                     <button
                       key={b.uid}
                       onClick={() => onBuildingClick(b)}
-                      className={`group relative flex flex-col items-center gap-1 p-3 rounded-lg bg-white border transition-all duration-200 hover:shadow-md ${
+                      className={`group relative flex flex-col items-center gap-1 p-3 rounded-2xl bg-white border transition-all duration-200 hover:shadow-soft ${
                         underConstruction
                           ? 'border-warning-300 border-dashed opacity-70'
                           : lowCondition
@@ -76,7 +76,7 @@ export function CampusMap({
                           <AlertTriangle size={10} />
                         </div>
                       )}
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center ${
                         underConstruction ? 'bg-warning-100 text-warning-600' : info.color.replace('text-', 'bg-').replace('-700', '-100')
                       }`}>
                         <Icon size={20} />

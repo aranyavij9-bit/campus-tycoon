@@ -5,7 +5,7 @@ export function HowToPlayScreen() {
   const { setScreen } = useGame();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-primary-50/20 to-accent-50/10 p-4 lg:p-6">
+    <div className="min-h-screen bg-neutral-50 p-4 lg:p-6">
       <div className="max-w-2xl mx-auto py-8">
         <button onClick={() => setScreen('home')} className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-800 mb-6 transition-colors">
           <ArrowLeft size={18} /> Back
@@ -17,7 +17,7 @@ export function HowToPlayScreen() {
         {/* Overview */}
         <div className="card p-6 mb-4">
           <div className="flex items-start gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-2xl bg-primary-100 text-primary-700 flex items-center justify-center shrink-0">
               <GraduationCap size={20} />
             </div>
             <div>
@@ -85,7 +85,7 @@ export function HowToPlayScreen() {
 function Step({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
     <div className="flex items-center gap-2.5 text-sm text-neutral-600">
-      <div className="w-7 h-7 rounded-md bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+      <div className="w-7 h-7 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
         {icon}
       </div>
       <span>{text}</span>
@@ -96,7 +96,7 @@ function Step({ icon, text }: { icon: React.ReactNode; text: string }) {
 function SystemItem({ icon, color, title, desc }: { icon: React.ReactNode; color: string; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-3">
-      <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${color}`}>
+      <div className={`w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 ${color}`}>
         {icon}
       </div>
       <div>

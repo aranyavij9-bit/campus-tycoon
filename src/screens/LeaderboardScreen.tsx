@@ -7,14 +7,14 @@ export function LeaderboardScreen() {
   const { setScreen, leaderboard } = useGame();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-secondary-50/20 to-primary-50/10 p-4 lg:p-6">
+    <div className="min-h-screen bg-neutral-50 p-4 lg:p-6">
       <div className="max-w-2xl mx-auto py-8">
         <button onClick={() => setScreen('home')} className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-800 mb-6 transition-colors">
           <ArrowLeft size={18} /> Back
         </button>
 
         <div className="text-center mb-8">
-          <div className="inline-flex w-16 h-16 rounded-2xl bg-secondary-100 text-secondary-700 items-center justify-center mb-3">
+          <div className="inline-flex w-16 h-16 rounded-3xl bg-secondary-100 text-secondary-700 items-center justify-center mb-3">
             <Trophy size={32} />
           </div>
           <h1 className="text-3xl font-serif font-bold text-neutral-900">Local Leaderboard</h1>
@@ -44,7 +44,7 @@ function LeaderboardRow({ entry, rank }: { entry: LeaderboardEntry; rank: number
 
   return (
     <div className={`card p-4 flex items-center gap-4 ${rank === 1 ? 'border-secondary-300' : ''}`}>
-      <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${rankColor}`}>
+      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center font-bold text-sm shrink-0 ${rankColor}`}>
         {rank <= 3 ? <Medal size={20} /> : rank}
       </div>
       <div className="flex-1 min-w-0">

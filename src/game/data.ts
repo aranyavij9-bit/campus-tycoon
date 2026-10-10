@@ -169,7 +169,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
   // --- Student Life Zone ---
   {
     id: 'student-center',
-    name: 'Student Centre',
+    name: 'Student Center',
     zone: 'student-life',
     cost: 300_000,
     capacity: 80,
@@ -182,8 +182,8 @@ export const BUILDING_DEFS: BuildingDef[] = [
     description: 'Clubs, dining, and student organization spaces.',
     iconName: 'Users',
     upgradeLevels: [
-      { level: 2, name: 'Expanded Student Centre', cost: 160_000, capacityBonus: 40, academicBonus: 0, satisfactionBonus: 5, maintenanceIncrease: 2_500, sustainabilityBonus: 0, description: 'More clubs and event spaces.' },
-      { level: 3, name: 'Premier Student Centre', cost: 280_000, capacityBonus: 40, academicBonus: 1, satisfactionBonus: 4, maintenanceIncrease: 3_500, sustainabilityBonus: 1, description: 'Convention-quality gathering spaces.' },
+      { level: 2, name: 'Expanded Student Center', cost: 160_000, capacityBonus: 40, academicBonus: 0, satisfactionBonus: 5, maintenanceIncrease: 2_500, sustainabilityBonus: 0, description: 'More clubs and event spaces.' },
+      { level: 3, name: 'Premier Student Center', cost: 280_000, capacityBonus: 40, academicBonus: 1, satisfactionBonus: 4, maintenanceIncrease: 3_500, sustainabilityBonus: 1, description: 'Convention-quality gathering spaces.' },
     ],
   },
   {
@@ -207,7 +207,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
   },
   {
     id: 'sports-center',
-    name: 'Sports Centre',
+    name: 'Sports Center',
     zone: 'student-life',
     cost: 500_000,
     capacity: 70,
@@ -220,7 +220,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
     description: 'Gymnasium, pool, and athletic facilities.',
     iconName: 'Dumbbell',
     upgradeLevels: [
-      { level: 2, name: 'Expanded Sports Centre', cost: 300_000, capacityBonus: 30, academicBonus: 0, satisfactionBonus: 4, maintenanceIncrease: 4_000, sustainabilityBonus: 0, description: 'Added courts and fitness studios.' },
+      { level: 2, name: 'Expanded Sports Center', cost: 300_000, capacityBonus: 30, academicBonus: 0, satisfactionBonus: 4, maintenanceIncrease: 4_000, sustainabilityBonus: 0, description: 'Added courts and fitness studios.' },
       { level: 3, name: 'Olympic Sports Complex', cost: 500_000, capacityBonus: 30, academicBonus: 0, satisfactionBonus: 5, maintenanceIncrease: 6_000, sustainabilityBonus: 1, description: 'Competition-grade athletic facilities.' },
     ],
   },
@@ -284,7 +284,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
   },
   {
     id: 'admissions-center',
-    name: 'Admissions Centre',
+    name: 'Admissions Center',
     zone: 'administration',
     cost: 200_000,
     capacity: 30,
@@ -297,8 +297,8 @@ export const BUILDING_DEFS: BuildingDef[] = [
     description: 'Admissions, recruitment, and enrollment services.',
     iconName: 'ClipboardCheck',
     upgradeLevels: [
-      { level: 2, name: 'Modern Admissions Centre', cost: 110_000, capacityBonus: 15, academicBonus: 0, satisfactionBonus: 2, maintenanceIncrease: 1_500, sustainabilityBonus: 0, description: 'Digital-first admissions process.' },
-      { level: 3, name: 'Premier Admissions Centre', cost: 190_000, capacityBonus: 15, academicBonus: 1, satisfactionBonus: 2, maintenanceIncrease: 2_500, sustainabilityBonus: 1, description: 'Comprehensive enrollment services.' },
+      { level: 2, name: 'Modern Admissions Center', cost: 110_000, capacityBonus: 15, academicBonus: 0, satisfactionBonus: 2, maintenanceIncrease: 1_500, sustainabilityBonus: 0, description: 'Digital-first admissions process.' },
+      { level: 3, name: 'Premier Admissions Center', cost: 190_000, capacityBonus: 15, academicBonus: 1, satisfactionBonus: 2, maintenanceIncrease: 2_500, sustainabilityBonus: 1, description: 'Comprehensive enrollment services.' },
     ],
   },
   // --- Infrastructure Zone ---
@@ -337,7 +337,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
     iconName: 'Bus',
     upgradeLevels: [
       { level: 2, name: 'Expanded Transport Hub', cost: 150_000, capacityBonus: 20, academicBonus: 0, satisfactionBonus: 2, maintenanceIncrease: 2_000, sustainabilityBonus: 2, description: 'More routes and electric shuttles.' },
-      { level: 3, name: 'Intermodal Transit Centre', cost: 260_000, capacityBonus: 20, academicBonus: 0, satisfactionBonus: 3, maintenanceIncrease: 3_000, sustainabilityBonus: 3, description: 'Full intermodal transit hub.' },
+      { level: 3, name: 'Intermodal Transit Center', cost: 260_000, capacityBonus: 20, academicBonus: 0, satisfactionBonus: 3, maintenanceIncrease: 3_000, sustainabilityBonus: 3, description: 'Full intermodal transit hub.' },
     ],
   },
   {
@@ -361,7 +361,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
   },
   {
     id: 'maintenance-center',
-    name: 'Maintenance Centre',
+    name: 'Maintenance Center',
     zone: 'infrastructure',
     cost: 170_000,
     capacity: 25,
@@ -374,7 +374,7 @@ export const BUILDING_DEFS: BuildingDef[] = [
     description: 'Facilities maintenance and repair depot.',
     iconName: 'Wrench',
     upgradeLevels: [
-      { level: 2, name: 'Modern Maintenance Centre', cost: 90_000, capacityBonus: 15, academicBonus: 0, satisfactionBonus: 1, maintenanceIncrease: 1_000, sustainabilityBonus: 1, description: 'Better tools and faster response.' },
+      { level: 2, name: 'Modern Maintenance Center', cost: 90_000, capacityBonus: 15, academicBonus: 0, satisfactionBonus: 1, maintenanceIncrease: 1_000, sustainabilityBonus: 1, description: 'Better tools and faster response.' },
       { level: 3, name: 'Advanced Maintenance Complex', cost: 160_000, capacityBonus: 15, academicBonus: 0, satisfactionBonus: 1, maintenanceIncrease: 2_000, sustainabilityBonus: 2, description: 'Preventive maintenance systems.' },
     ],
   },

@@ -17,7 +17,7 @@ export function HUD({ state }: { state: GameState }) {
       {/* Top row: university info + nav */}
       <div className="flex items-center justify-between px-4 lg:px-6 py-2.5 border-b border-neutral-100">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="w-9 h-9 rounded-lg bg-primary-600 text-white flex items-center justify-center shrink-0">
+          <div className="w-9 h-9 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
             <GraduationCap size={20} />
           </div>
           <div className="min-w-0">
@@ -54,7 +54,7 @@ export function HUD({ state }: { state: GameState }) {
         <StatChip icon={<Smile size={14} />} label="Satisfaction" value={`${state.satisfaction}/100`} color="accent" />
         <StatChip icon={<BookOpen size={14} />} label="Academic" value={`${state.academicQuality}/100`} color="primary" />
         <StatChip icon={<Leaf size={14} />} label="Sustainability" value={`${state.sustainability}/100`} color="accent" />
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-600 shrink-0">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 shrink-0">
           <Calendar size={14} />
           <span className="text-xs font-medium">
             {monthName(state.month)} Y{state.year}
@@ -86,7 +86,7 @@ function StatChip({
     success: 'bg-success-50 text-success-700',
   };
   return (
-    <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg ${colorMap[color]} shrink-0`}>
+    <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${colorMap[color]} shrink-0`}>
       {icon}
       <span className="text-xs opacity-70">{label}</span>
       <span className="text-xs font-bold">{value}</span>

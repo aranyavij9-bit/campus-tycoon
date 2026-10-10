@@ -36,7 +36,7 @@ export function DecisionLogScreen() {
   const sorted = [...state.decisionLog].reverse();
 
   return (
-    <div className="min-h-screen bg-neutral-100 p-4 lg:p-6">
+    <div className="min-h-screen bg-neutral-50 p-4 lg:p-6">
       <div className="max-w-3xl mx-auto">
         <button onClick={() => setScreen('game')} className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-800 mb-4 transition-colors">
           <ArrowLeft size={18} /> Back to Game
@@ -64,7 +64,7 @@ export function DecisionLogScreen() {
 function DecisionCard({ entry }: { entry: DecisionLogEntry }) {
   return (
     <div className="card p-3 flex items-start gap-3">
-      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${categoryColors[entry.category] || 'bg-neutral-100 text-neutral-600'}`}>
+      <div className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 ${categoryColors[entry.category] || 'bg-neutral-100 text-neutral-600'}`}>
         {categoryIcons[entry.category] || <AlertCircle size={14} />}
       </div>
       <div className="flex-1 min-w-0">

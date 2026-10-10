@@ -19,7 +19,7 @@ export function NewGameScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-primary-50/20 to-accent-50/10 p-6">
+    <div className="min-h-screen bg-neutral-50 p-6">
       <div className="max-w-3xl mx-auto py-8">
         {/* Back */}
         <button
@@ -58,13 +58,13 @@ export function NewGameScreen() {
                 <button
                   key={key}
                   onClick={() => setGoal(key)}
-                  className={`w-full flex items-start gap-3 p-4 rounded-lg border transition-all duration-200 text-left ${
+                  className={`w-full flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 text-left ${
                     selected
                       ? 'border-primary-400 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-neutral-200 bg-white hover:border-neutral-300 hover:bg-neutral-50'
                   }`}
                 >
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
+                  <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 ${
                     selected ? 'bg-primary-600 text-white' : 'bg-neutral-100 text-neutral-500'
                   }`}>
                     <Icon size={20} />
@@ -92,7 +92,7 @@ export function NewGameScreen() {
               <button
                 key={d.key}
                 onClick={() => setDifficulty(d.key)}
-                className={`p-4 rounded-lg border text-center transition-all duration-200 ${
+                className={`p-4 rounded-2xl border text-center transition-all duration-200 ${
                   difficulty === d.key
                     ? 'border-primary-400 bg-primary-50 ring-2 ring-primary-200'
                     : 'border-neutral-200 bg-white hover:border-neutral-300 hover:bg-neutral-50'

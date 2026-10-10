@@ -38,7 +38,7 @@ export function EventModal({ event }: { event: GameEvent | null }) {
             <button
               key={i}
               onClick={() => resolveEvent(i)}
-              className="w-full text-left p-4 rounded-lg border border-neutral-200 bg-white hover:border-primary-300 hover:bg-primary-50/50 transition-all duration-200 group"
+              className="w-full text-left p-4 rounded-2xl border border-neutral-200 bg-white hover:border-primary-300 hover:bg-primary-50/50 transition-all duration-200 group"
             >
               <p className="font-semibold text-sm text-neutral-800 mb-1">{choice.label}</p>
               <p className="text-xs text-neutral-500">{choice.description}</p>
@@ -75,7 +75,7 @@ export function SemesterReviewModal({ state }: { state: GameState }) {
           <ReviewRow label="Expenses" change={review.expenses} isMoney negative />
         </div>
 
-        <p className="text-sm text-neutral-600 bg-neutral-50 rounded-lg p-3 mb-4">{review.summary}</p>
+        <p className="text-sm text-neutral-600 bg-neutral-50 rounded-2xl p-3 mb-4">{review.summary}</p>
 
         <button onClick={dismissSemesterReview} className="btn-primary w-full">
           Continue <ChevronRight size={16} />
@@ -186,12 +186,12 @@ export function YearlyReportModal({ state }: { state: GameState }) {
         )}
 
         {/* Financial summary */}
-        <div className="bg-neutral-50 rounded-lg p-3 mb-3">
+        <div className="bg-neutral-50 rounded-2xl p-3 mb-3">
           <p className="text-xs text-neutral-600">{report.financialSummary}</p>
         </div>
 
         {/* Next year outlook */}
-        <div className="bg-primary-50 rounded-lg p-3 mb-4">
+        <div className="bg-primary-50 rounded-2xl p-3 mb-4">
           <p className="text-xs font-semibold text-primary-700 uppercase tracking-wider mb-1">Next Year Outlook</p>
           <p className="text-sm text-neutral-600">{report.nextYearOutlook}</p>
         </div>
@@ -206,7 +206,7 @@ export function YearlyReportModal({ state }: { state: GameState }) {
 
 function MetricBox({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-neutral-50 rounded-lg p-2.5 text-center">
+    <div className="bg-neutral-50 rounded-2xl p-2.5 text-center">
       <p className="text-xs text-neutral-500">{label}</p>
       <p className="text-base font-bold text-neutral-800">{value}</p>
     </div>
@@ -250,7 +250,7 @@ export function GameOverModal({ state }: { state: GameState }) {
       <div className="p-6 text-center">
         {state.won ? (
           <>
-            <div className="inline-flex w-16 h-16 rounded-2xl bg-success-100 text-success-600 items-center justify-center mb-4">
+            <div className="inline-flex w-16 h-16 rounded-3xl bg-success-100 text-success-600 items-center justify-center mb-4">
               <Trophy size={32} />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-1">Victory!</h3>
@@ -260,7 +260,7 @@ export function GameOverModal({ state }: { state: GameState }) {
           </>
         ) : (
           <>
-            <div className="inline-flex w-16 h-16 rounded-2xl bg-error-100 text-error-600 items-center justify-center mb-4">
+            <div className="inline-flex w-16 h-16 rounded-3xl bg-error-100 text-error-600 items-center justify-center mb-4">
               <XCircle size={32} />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-1">Game Over</h3>
@@ -268,7 +268,7 @@ export function GameOverModal({ state }: { state: GameState }) {
           </>
         )}
 
-        <div className="bg-neutral-50 rounded-lg p-4 mb-4">
+        <div className="bg-neutral-50 rounded-2xl p-4 mb-4">
           <p className="text-xs text-neutral-500 mb-1">Final Score</p>
           <p className="text-3xl font-bold text-primary-700">{score.toLocaleString()}</p>
           <div className="grid grid-cols-2 gap-2 mt-3 text-xs">

@@ -5,7 +5,7 @@ export function AboutScreen() {
   const { setScreen } = useGame();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-primary-50/20 to-accent-50/10 p-4 lg:p-6">
+    <div className="min-h-screen bg-neutral-50 p-4 lg:p-6">
       <div className="max-w-2xl mx-auto py-8">
         <button onClick={() => setScreen('home')} className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-800 mb-6 transition-colors">
           <ArrowLeft size={18} /> Back
@@ -44,7 +44,7 @@ export function AboutScreen() {
             <p><span className="font-semibold text-neutral-700">State Management:</span> The entire game state is managed through React context and reducers, with all derived values recalculated on every action.</p>
             <p><span className="font-semibold text-neutral-700">Simulation Engine:</span> A turn-based engine processes monthly ticks — advancing construction, calculating finances, updating student populations, drifting metrics, and triggering events.</p>
             <p><span className="font-semibold text-neutral-700">Persistence:</span> Game state is saved to browser local storage. No backend, no accounts, no server-side state.</p>
-            <p><span className="font-semibold text-neutral-700">Data Visualisation:</span> Custom SVG charts render trend data for budget, enrollment, reputation, academic quality, and sustainability over time.</p>
+            <p><span className="font-semibold text-neutral-700">Data Visualization:</span> Custom SVG charts render trend data for budget, enrollment, reputation, academic quality, and sustainability over time.</p>
             <p><span className="font-semibold text-neutral-700">Event-Driven Logic:</span> Weighted random events with conditional triggers create a dynamic, replayable experience.</p>
           </div>
         </div>
@@ -63,7 +63,7 @@ export function AboutScreen() {
 function SystemRow({ icon, color, title, desc }: { icon: React.ReactNode; color: string; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-3">
-      <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${color}`}>
+      <div className={`w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 ${color}`}>
         {icon}
       </div>
       <div>

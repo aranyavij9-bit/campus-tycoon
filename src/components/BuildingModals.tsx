@@ -49,7 +49,7 @@ export function BuildingInfoModal({
         </div>
 
         {!building.completed ? (
-          <div className="bg-warning-50 rounded-lg p-4 text-center">
+          <div className="bg-warning-50 rounded-2xl p-4 text-center">
             <p className="text-sm text-warning-700 font-medium">
               Under construction — {def.constructionTime - building.monthsUnderConstruction} months remaining
             </p>
@@ -91,7 +91,7 @@ export function BuildingInfoModal({
                   <ArrowUpCircle size={16} /> Upgrade ({formatMoneyFull(upgrade.cost)})
                 </button>
               ) : (
-                <div className="flex-1 flex items-center justify-center gap-1 text-sm text-neutral-400 bg-neutral-50 rounded-lg">
+                <div className="flex-1 flex items-center justify-center gap-1 text-sm text-neutral-400 bg-neutral-50 rounded-2xl">
                   <Check size={16} /> Max Level
                 </div>
               )}
@@ -105,7 +105,7 @@ export function BuildingInfoModal({
 
 function InfoBox({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-neutral-50 rounded-lg p-2.5">
+    <div className="bg-neutral-50 rounded-2xl p-2.5">
       <p className="text-xs text-neutral-500">{label}</p>
       <p className="text-sm font-bold text-neutral-800">{value}</p>
     </div>
@@ -146,14 +146,14 @@ export function BuildMenuModal({
             return (
               <div
                 key={def.id}
-                className={`p-4 rounded-lg border transition-all ${
+                className={`p-4 rounded-2xl border transition-all ${
                   canAfford && !alreadyBuilt
                     ? 'border-neutral-200 bg-white hover:border-primary-300 hover:shadow-sm'
                     : 'border-neutral-200 bg-neutral-50 opacity-60'
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-primary-100 text-primary-700 flex items-center justify-center shrink-0">
                     <Icon size={20} />
                   </div>
                   <div className="flex-1 min-w-0">

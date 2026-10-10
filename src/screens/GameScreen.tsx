@@ -16,7 +16,7 @@ export function GameScreen() {
   if (!state) return null;
 
   return (
-    <div className="min-h-screen bg-neutral-100 flex flex-col">
+    <div className="min-h-screen bg-neutral-50 flex flex-col">
       <HUD state={state} />
 
       {state.warning && <WarningBanner state={state} />}
